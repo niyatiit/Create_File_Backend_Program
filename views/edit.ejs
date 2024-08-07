@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main w-full h-screen bg-zinc-900 text-white p-10">
+        <a href="/" class="text-blue-600"> Go Back To Home Page </a>
+        <form action="/edit" method="post">
+            <input class="block w-[30%] my-2 bg-zinc-700 p-2 rounded-lg" type="text"
+                placeholder="privous File Name " name="privous" value="<%= filename %>" />
+            <textarea class="block resize-none bg-zinc-700 p-2 w-[30%] my-2 rounded-lg"
+                placeholder="New File Name" name="new"></textarea>
+            <button type="submit" class="bg-green-800 p-2 rounded-lg"> Update Task </button>
+        </form>
+    </div>
+</body>
+
+</html>

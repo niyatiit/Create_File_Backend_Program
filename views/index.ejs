@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- main div -->
+    <div class="main w-full h-screen bg-zinc-900">
+
+
+        <div class="form text-white p-10 ">
+
+            <!-- this is create the router and using the method of post  -->
+            <form action="/create" method="post">
+                <input class="block w-full my-2 bg-zinc-700 p-2 rounded-lg" type="text"
+                    placeholder="Enter the Text Somthing.." name="title">
+                <textarea class="block resize-none bg-zinc-700 p-2 w-full my-2 rounded-lg"
+                    placeholder="Enter the Task.." name="details"></textarea>
+                <button type="submit" class="bg-blue-800 p-2 rounded-lg"> Create Task </button>
+            </form>
+        </div>
+        <div class="task p-10 flex flex-wrap gap-3">
+
+
+            <% if(myfiles.length> 0){ %>
+                <% myfiles.forEach(function(val){ %>
+                    <div class="task bg-zinc-700 min-w-72 text-white p-2 rounded-lg ">
+                        <h1 class="text-white">
+                            <%= val %>
+                        </h1>
+                        <div class="flex justify-between w-full">
+                            <a href="/files/<%= val %>" class="text-blue-500"> Read more</a>
+                            <a href="/edit/<%= val %>" class="text-zinc-400"> Edit Name </a>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <h3 class="text-white"> No Task Here</h3>
+                            <% }%>
+
+        </div>
+    </div>
+</body>
